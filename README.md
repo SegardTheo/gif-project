@@ -4,6 +4,9 @@ Projet Dev mobile : Liste gifs
 
 ## Doc
 
+### Liens
+- [Schéma UseCase](https://drive.google.com/file/d/1CYod4Dvz7qaI1TaO_0MMA5KnimZ-Uuu7/view?usp=sharing)
+
 ### Technologies et librairies
 - Android 12
 - Flutter
