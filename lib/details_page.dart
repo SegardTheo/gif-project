@@ -18,6 +18,9 @@ class _DetailsPageState extends State<DetailsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: AppBar(
+          title: const Text('Gyffi - Détails'),
+        ),
         body: Container(
             alignment: Alignment.center,
             color: const Color.fromRGBO(11, 11, 11, 1),
