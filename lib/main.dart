@@ -11,8 +11,23 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
+    return MaterialApp(
+      title: "Gyffi",
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSwatch(
+          brightness: Brightness.dark,
+          primarySwatch: Colors.purple,
+        ),
+
+        fontFamily: 'Hind',
+
+        textTheme: const TextTheme(
+          headline1: TextStyle(fontSize: 72.0, fontWeight: FontWeight.bold),
+          headline6: TextStyle(fontSize: 20, fontStyle: FontStyle.italic),
+          bodyText2: TextStyle(fontSize: 14.0, fontFamily: 'Hind'),
+        )
+      ),
+      home: const Scaffold(
         body: ParticleBackgroundPage(),
       ),
     );
@@ -146,7 +161,7 @@ class AnimatedBackground extends StatelessWidget {
           ColorTween(
               begin: const Color(0xff8a113a), end: Colors.lightBlue.shade900)),
       Track("color2").add(const Duration(seconds: 3),
-          ColorTween(begin: const Color(0xff440216), end: Colors.blue.shade600))
+          ColorTween(begin: const Color(0xff440216), end: Colors.greenAccent))
     ]);
 
     return ControlledAnimation(
@@ -195,7 +210,7 @@ class CenteredText extends StatelessWidget {
           },
           style: ElevatedButton.styleFrom(
             padding:  const EdgeInsets.only(right: 15.0, left: 15.0, top: 15.0, bottom: 15.0),
-            shadowColor: Colors.white,
+            shadowColor: Colors.purpleAccent,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(8.0),
             ),

@@ -15,7 +15,8 @@ class ListeGifComponent extends StatefulWidget {
   final ListeGif? listeGif;
   final Api api;
 
-  const ListeGifComponent(this.api, this.listeGif, {Key? key}) : super(key: key);
+  const ListeGifComponent(this.api, this.listeGif, {Key? key})
+      : super(key: key);
 
   @override
   _ListeGifComponent createState() => _ListeGifComponent();
@@ -36,15 +37,30 @@ class _ListeGifComponent extends State<ListeGifComponent> {
                   onPressed: () {},
                   menuItems: <FocusedMenuItem>[
                     FocusedMenuItem(
-                        title: const Text("Detail"),
+                        title: const Text("Detail",
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black54)),
                         onPressed: () {
                           NavigationService.navigateToDetail(
                               context, gif.urlGif);
                         }),
                     FocusedMenuItem(
-                        title: const Text("Partage"),
+                        title: const Text("Partage",
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black54)),
                         onPressed: () {
                           GifService.shareFile(gif.urlGif);
+                        }),
+                    FocusedMenuItem(
+                        title: const Text("Modifier le gif",
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black54)),
+                        onPressed: () {
+                          NavigationService.navigateToModifyPage(
+                              context, gif.urlGif);
                         })
                   ],
                   child: InkWell(
@@ -57,8 +73,9 @@ class _ListeGifComponent extends State<ListeGifComponent> {
                           child: ClipRRect(
                               borderRadius: BorderRadius.circular(7.0),
                               child: Image.network(
-                                gif.urlGif,
-                                fit: BoxFit.contain,
+                                  gif.urlGif,
+                                  width: double.infinity,
+                                fit: BoxFit.fitWidth,
                               )))),
                 );
               },

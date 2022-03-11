@@ -119,7 +119,9 @@ class _HomePageState extends State<HomePage> {
                     return Text("${snapshot.error}");
                   }
 
-                  return const CircularProgressIndicator();
+                  return const CircularProgressIndicator(
+                    semanticsLabel: 'Linear progress indicator',
+                  );
                 })
           ],
         ));
